@@ -32,9 +32,22 @@
 }
 
 .account-list-container .list-item {
+  position: relative;
   width: 50%;
   margin: 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.account-list-container .btn-box {
+  position: absolute;
+  right: -70px;
+  cursor: pointer;
+}
+
+.account-list-container .del-btn {
+  border: 1px solid #1890ff;
+  border-radius: 4px;
+  padding: 0 10px;
 }
