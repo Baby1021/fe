@@ -18,7 +18,7 @@ class AccountList extends Component {
   }
 
   render() {
-    let accountList = this.props.accountList
+    let accountList = this.props.accountList || []
 
     return (
       <div className="account-list-container">
