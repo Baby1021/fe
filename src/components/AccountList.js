@@ -10,7 +10,7 @@ class AccountList extends Component {
 
   handleDel(index,id) {
     delAccount({billId: id}).then(res => {
-      if (res.message === 'success') {
+      if (res.status === 0) {
         this.props.handleDel(index)
         alert('删除成功')
       }
