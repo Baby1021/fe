@@ -13,6 +13,10 @@ class AccountApp extends Component {
 
 
   componentDidMount() {
+    this.fetchAccount()
+  }
+
+  fetchAccount() {
     getAccount().then(res => {
       this.setState({
         accountList: res.data
@@ -20,12 +24,19 @@ class AccountApp extends Component {
     })
   }
 
+  handleDel(index) {
+    // const accountList = this.state.accountList
+    // accountList.splice(index,1)
+    // this.setState({ accountList })
+    this.fetchAccount()
+  }
+
   render() {
     return (
       <div>
         <AccountInput />
         <div className="account-list-container">
-          <AccountList accountList={this.state.accountList}/>
+          <AccountList accountList={this.state.accountList} handleDel={this.handleDel.bind(this)}/>
         </div>
       </div>
     )

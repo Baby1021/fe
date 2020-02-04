@@ -21,3 +21,13 @@ export function getAccount(data){
       data: data
   })
 }
+
+export function delAccount(data){
+  return server({
+      url: '/bill',
+      method: 'delete',
+      dataType: "json",
+      contentType: "application/json;charset=UTF-8",
+      data: data
+  })
+}
