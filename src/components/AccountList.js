@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {delAccount} from '../api/api.js'
+import {getAccount,delAccount} from '../api/api.js'
 
 class AccountList extends Component {
   constructor(props) {

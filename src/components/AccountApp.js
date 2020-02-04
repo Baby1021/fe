@@ -13,6 +13,10 @@ class AccountApp extends Component {
 
 
   componentDidMount() {
+    this.fetchAccount()
+  }
+
+  fetchAccount() {
     getAccount().then(res => {
       this.setState({
         accountList: res.data
@@ -21,9 +25,10 @@ class AccountApp extends Component {
   }
 
   handleDel(index) {
-    const accountList = this.state.accountList
-    accountList.splice(index,1)
-    this.setState({ accountList })
+    // const accountList = this.state.accountList
+    // accountList.splice(index,1)
+    // this.setState({ accountList })
+    this.fetchAccount()
   }
 
   render() {
