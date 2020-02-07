@@ -25,15 +25,6 @@ class AccountInput extends Component {
   }
 
   handleSubmit() {
-    let accountList = this.state.accountList
-    accountList.push({
-      accountTypeName: this.state.accountType.label,
-      money: this.state.money
-    })
-    this.setState({
-      accountList: accountList
-    })
-
     const params = {
       content: '',
       money: this.state.money,
@@ -41,6 +32,7 @@ class AccountInput extends Component {
     }
     addAccount(params).then(res => {
       alert('添加成功')
+      this.props.handleAdd()
     })
   }
 

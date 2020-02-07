@@ -1,6 +1,6 @@
 import axios from 'axios';
 //取消请求
-let CancelToken = axios.CancelToken
+// let CancelToken = axios.CancelToken
 axios.create({
     timeout: 15000 ,// 请求超时时间
     headers: {
