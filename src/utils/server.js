@@ -1,4 +1,5 @@
 import axios from 'axios';
+axios.defaults.baseURL = 'http://39.108.227.137:7001'
 //取消请求
 // let CancelToken = axios.CancelToken
 axios.create({
