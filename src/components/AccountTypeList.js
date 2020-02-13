@@ -28,7 +28,6 @@ class ExpendTypeList extends Component {
   }
 
   handleSelectType(item,index) {
-    console.log(item)
     this.setState({
       currentIndex: index
     })
