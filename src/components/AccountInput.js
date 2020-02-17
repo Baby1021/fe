@@ -8,30 +8,40 @@ class AccountInput extends Component {
     this.state = {
       accountType: '',
       money: '',
+      content: '',
       accountList: []
     }
   }
 
-  getSelectType(value) {
+  getSelectType = (value) => {
     this.setState({
       accountType: value
     })
   }
 
-  handleInputChange(e) {
+  handleInputChange = (event) => {
+    event.persist() // 为什么要加这个呢？
+    const name = event.target.name;
+
     this.setState({
-      money: e.target.value
-    })
+      [name]: event.target.value
+    });
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
     const params = {
-      content: '',
+      content: this.state.content,
       money: this.state.money,
-      type: 'spending'
+      type: 'spending',
+      categoryId: this.state.accountType.id
     }
     addAccount(params).then(res => {
       alert('添加成功')
+      // 清空数据
+      this.setState({
+        money: '',
+        content: ''
+      });
       this.props.handleAdd()
     })
   }
@@ -40,12 +50,16 @@ class AccountInput extends Component {
     return (
       <div>
         <div className="account-input-container">
-          <AccountTypeList getSelectType={this.getSelectType.bind(this)} />
+          <AccountTypeList getSelectType={this.getSelectType} />
           <div>
             <label>金额(￥)：</label>
-            <input onChange={this.handleInputChange.bind(this)} type="text" name="name" />
+            <input onChange={this.handleInputChange} type="text" name="money" />
           </div> 
-          <button className="btn" onClick={this.handleSubmit.bind(this)}>确定</button>
+          <div>
+            <label>备注：</label>
+            <input onChange={this.handleInputChange} type="text" name="content" />
+          </div> 
+          <button className="btn" onClick={this.handleSubmit}>确定</button>
         </div>
       </div>
     )
