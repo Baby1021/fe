@@ -1,49 +1,45 @@
 import React, { Component } from "react";
+import {getAccountCategory} from '../api/api.js'
 import "../styles/account.css";
-
-const list = [
-  {
-    icon: "",
-    type: 0,
-    label: "房租"
-  },
-  {
-    icon: "",
-    type: 1,
-    label: "交通"
-  },
-  {
-    icon: "",
-    type: 2,
-    label: "吃饭"
-  }
-];
 
 class ExpendTypeList extends Component {
   constructor() {
     super()
     this.state = {
-      currentIndex: -1
+      currentIndex: -1,
+      list: []
     }
   }
 
-  handleSelectType(item,index) {
+  componentDidMount() {
+    this.fetchCategory()
+  }
+
+  handleSelectType = (item,index) => () => {
     this.setState({
       currentIndex: index
     })
     this.props.getSelectType(item)
   }
 
+  fetchCategory() {
+    getAccountCategory().then(res => {
+      this.setState({
+        list: res.data
+      })
+    })
+  }
+
   render() {
     return (
       <div className="account-type-list-container">
-        {list.map((item, index) => (
+        {this.state.list.map((item, index) => (
           <div
             className={`type-item ${index === this.state.currentIndex ? 'active' : 'normal'}`}
             key={index}
-            onClick={this.handleSelectType.bind(this,item,index)}
+            onClick={this.handleSelectType(item,index)}
           >
-            {item.label}
+            {item.name}
           </div>
         ))}
       </div>

@@ -8,7 +8,7 @@ class AccountList extends Component {
     }
   }
 
-  handleDel(index,id) {
+  handleDel = (index,id) => () => {
     delAccount({billId: id}).then(res => {
       if (res.status === 0) {
         this.props.handleDel(index)
@@ -23,10 +23,11 @@ class AccountList extends Component {
     return (
       <div className="account-list-container">
         {accountList.map((item, index) => (
-          <div onClick={this.handleDel.bind(this,index,item.id)} className="list-item" key={index}>
-            <div>{item.accountTypeName}</div>
+          <div className="list-item" key={index}>
+            <div>{item.category.name}</div>
+            <div>{item.content}</div>
             <div>￥{item.money}</div>
-            <div className="btn-box del-btn">删除</div>
+            <div onClick={this.handleDel(index,item.id)} className="btn-box del-btn">删除</div>
           </div>
         ))}
       </div>

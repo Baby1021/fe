@@ -31,3 +31,12 @@ export function delAccount(data){
       data: data
   })
 }
+
+export function getAccountCategory() {
+  return server({
+    url: '/bill/categories',
+    method: 'get',
+    dataType: "json",
+    contentType: "application/json;charset=UTF-8"
+  })
+}

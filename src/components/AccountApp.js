@@ -24,20 +24,20 @@ class AccountApp extends Component {
     })
   }
 
-  handleDel(index) {
+  handleDel = () => {
     this.fetchAccount()
   }
 
-  handleAdd() {
+  handleAdd = () => {
     this.fetchAccount()
   }
 
   render() {
     return (
       <div>
-        <AccountInput handleAdd={this.handleAdd.bind(this)} />
+        <AccountInput handleAdd={this.handleAdd} />
         <div className="account-list-container">
-          <AccountList accountList={this.state.accountList} handleDel={this.handleDel.bind(this)}/>
+          <AccountList accountList={this.state.accountList} handleDel={this.handleDel}/>
         </div>
       </div>
     )
