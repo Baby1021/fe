@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {getAccountCategory} from '../api/api.js'
-import "../styles/account.css";
+import {getAccountCategory} from '../../api/api.js'
+import "../../styles/account.css";
 
 class ExpendTypeList extends Component {
   constructor() {

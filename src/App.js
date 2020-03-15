@@ -1,11 +1,11 @@
 import React from "react";
-import AccountApp from "./components/AccountApp.js";
+import AccountList from "./pages/accountList/index.js";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <AccountApp />
+      <AccountList />
     </div>
   );
 }

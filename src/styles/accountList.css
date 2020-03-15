@@ -1,0 +1,106 @@
+.accountList-container {
+  padding: 0 20px;
+}
+
+.head-container {
+  background-color: #fe656c;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-info .avatar {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.total-account {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.total-account .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.total-account .item:first-child {
+  margin-right: 80px;
+}
+
+.total-account .item .money {
+  font-size: 16px;
+  font-family: 'DIN';
+}
+
+.account-list-container {
+  margin-top: 15px;
+}
+
+.account-list-container .list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 8px;
+  background: #fff;
+  box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.05);
+  border-radius: 5px;
+}
+
+.accountList-container .list-item .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.accountList-container .list-item .content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 12px;
+  color: #8B97A9;
+  margin-left: 15px;
+}
+
+.accountList-container .list-item .content .name {
+  font-size: 14px;
+  color: #333333;
+}
+
+.accountList-container .list-item .money {
+  font-family: 'DIN';
+}
+
+.accountList-container .del-btn {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+}
+
+.accountList-container .del-btn .del {
+  width: 14px;
+  height: 14px;
+}
+
+.color-red {
+  color: #fe656c;
+}
+
+.color-blue {
+  color: #4599fc;
+}

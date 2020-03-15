@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {addAccount} from '../api/api.js'
+import {addAccount} from '../../api/api.js'
 import Keyboard from './Keyboard.js'
 import AccountTypeList from './AccountTypeList'
-import "../styles/account.css";
+import "../../styles/account.css";
 
 class AccountInput extends Component {
   constructor() {

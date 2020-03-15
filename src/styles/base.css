@@ -1,0 +1,16 @@
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 0;
+}
+
+.title-container .title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title-container .add {
+  width: 24px;
+  height: 24px;
+}
