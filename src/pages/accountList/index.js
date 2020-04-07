@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {getAccount} from '../../api/api.js'
 import AccountList from '../../components/List/AccountList.js'
 import "../../styles/base.css"
+import { NavLink } from 'react-router-dom';
 
 class AccountApp extends Component {
   constructor() {
@@ -37,7 +38,7 @@ class AccountApp extends Component {
       <div>
         <div className="title-container">
           <span className="title">Record</span>
-          <img onClick={this.handleAdd} className="add" src={require('../../assets/images/add.png')} alt="添加"></img>
+          <NavLink to="/addAcount" exact><img onClick={this.handleAdd} className="add" src={require('../../assets/images/add.png')} alt="添加"></img></NavLink>
         </div>
         <div>
           <AccountList accountList={this.state.accountList} handleDel={this.handleDel}/>
