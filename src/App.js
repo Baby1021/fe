@@ -1,11 +1,14 @@
 import React from "react";
-import AccountApp from "./components/AccountApp.js";
+import AccountList from "./pages/accountList/index.js";
 import "./App.css";
+import Route from './router/';
 
 function App() {
   return (
     <div className="App">
-      <AccountApp />
+      <Route>
+        <AccountList />
+      </Route>
     </div>
   );
 }

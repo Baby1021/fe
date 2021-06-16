@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import {getAccountCategory} from '../api/api.js'
-import "../styles/account.css";
+import {getAccountCategory} from '../../api/api.js'
+import "../../styles/account.css";
 
 class ExpendTypeList extends Component {
   constructor() {
     super()
     this.state = {
-      currentIndex: -1,
       list: []
     }
   }
@@ -16,9 +15,6 @@ class ExpendTypeList extends Component {
   }
 
   handleSelectType = (item,index) => () => {
-    this.setState({
-      currentIndex: index
-    })
     this.props.getSelectType(item)
   }
 
@@ -27,6 +23,7 @@ class ExpendTypeList extends Component {
       this.setState({
         list: res.data
       })
+      this.props.getSelectType(res.data[0]);
     })
   }
 
@@ -35,10 +32,11 @@ class ExpendTypeList extends Component {
       <div className="account-type-list-container">
         {this.state.list.map((item, index) => (
           <div
-            className={`type-item ${index === this.state.currentIndex ? 'active' : 'normal'}`}
+            className="type-item"
             key={index}
             onClick={this.handleSelectType(item,index)}
           >
+            <img src={item.icon} className="icon" alt="" />
             {item.name}
           </div>
         ))}
